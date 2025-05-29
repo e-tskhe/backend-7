@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.stats {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f0f8ff;
+    border-radius: 5px;
+}
+.edit-form {
+    display: none;
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.edit-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+.edit-form input, .edit-form textarea, .edit-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.edit-form select[multiple] {
+    height: 150px;
+}
+button, .button {
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+button:hover, .button:hover {
+    background: #45a049;
+}
+.delete-btn {
+    background: #f44336;
+}
+.delete-btn:hover {
+    background: #d32f2f;
+}
+.edit-btn {
+    background: #2196F3;
+}
+.edit-btn:hover {
+    background: #0b7dda;
+}
