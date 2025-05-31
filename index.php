@@ -63,42 +63,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
     if ($errors['name'])
     {
         setcookie('name_error', '', 100000);
-        $messages['name'] = '<div class="error">Заполните имя. Допустимы только буквы и пробелы.</div>';
+        $messages['name'] = 'Заполните имя. Допустимы только буквы и пробелы.';
     }
     if ($errors['phone'])
     {
         setcookie('phone_error', '', 100000);
-        $messages['phone'] = '<div class="error">Заполните телефон в формате +7/7/8 и 10 цифр.</div>';
+        $messages['phone'] = 'Заполните телефон в формате +7/7/8 и 10 цифр.';
     }
     if ($errors['email'])
     {
         setcookie('email_error', '', 100000);
-        $messages['email'] = '<div class="error">Заполните email в правильном формате.</div>';
+        $messages['email'] = 'Заполните email в правильном формате.';
     }
     if ($errors['birthdate'])
     {
         setcookie('birthdate_error', '', 100000);
-        $messages['birthdate'] = '<div class="error">Заполните дату рождения.</div>';
+        $messages['birthdate'] = 'Заполните дату рождения.';
     }
     if ($errors['gender'])
     {
         setcookie('gender_error', '', 100000);
-        $messages['gender'] = '<div class="error">Укажите пол.</div>';
+        $messages['gender'] = 'Укажите пол.';
     }
     if ($errors['languages'])
     {
         setcookie('languages_error', '', 100000);
-        $messages['languages'] = '<div class="error">Выберите хотя бы один язык программирования.</div>';
+        $messages['languages'] = 'Выберите хотя бы один язык программирования.';
     }
     if ($errors['bio'])
     {
         setcookie('bio_error', '', 100000);
-        $messages['bio'] = '<div class="error">Заполните биографию. Допустимы буквы, цифры и знаки препинания.</div>';
+        $messages['bio'] = 'Заполните биографию. Допустимы буквы, цифры и знаки препинания.';
     }
     if ($errors['agreement'])
     {
         setcookie('agreement_error', '', 100000);
-        $messages['agreement'] = '<div class="error">Необходимо ваше согласие.</div>';
+        $messages['agreement'] = 'Необходимо ваше согласие.';
     }
 
     $values = array();
