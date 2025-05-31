@@ -6,18 +6,10 @@ header("X-XSS-Protection: 1; mode=block");
 header("Referrer-Policy: no-referrer-when-downgrade");
 header('Content-Type: text/html; charset=UTF-8');
 
-session_set_cookie_params([
-    'lifetime' => 86400,
-    'path' => '/',
-    'domain' => $_SERVER['HTTP_HOST'],
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Strict'
-]);
 
 require_once 'db.php';
-
-session_start();
+require_once 'tokens.php';
+generateCSRFToken();
 
 if (!empty($_SESSION['login'])) {
     header('Location: index.php');

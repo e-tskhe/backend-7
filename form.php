@@ -1,12 +1,13 @@
 <?php
 require_once 'tokens.php';
+generateCSRFToken();
 ?>
 
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Задание 6</title>
+    <title>Задание 7</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,19 +32,15 @@ require_once 'tokens.php';
             </div>
         <?php else: ?>
             <form method="POST" action="login.php" class="auth-form">
-                <?php if (!empty($auth_error)): ?>
-                <div class="error"><?= $auth_error ?></div>
-                <?php endif; ?>
-                
+            
+
                 <?php if (!empty($_COOKIE['login']) && !empty($_COOKIE['password'])): ?>
-                    <div class="auth-hint">
-                        Ваши данные для входа:<br>
-                        Логин: <?= htmlspecialchars($_COOKIE['login']) ?><br>
-                        Пароль: <?= htmlspecialchars($_COOKIE['password']) ?>
-                    </div>
-                <?php endif; ?>
-                
-                <a href='login.php' class='auth-btn'>Войти для изменения данных</a>
+                    <form method="POST" action="login.php" class="auth-form">
+                        <input type="hidden" name="login" value="<?= htmlspecialchars($_COOKIE['login']) ?>">
+                        <input type="hidden" name="password" value="<?= htmlspecialchars($_COOKIE['password']) ?>">
+                    </form>
+                    <?php endif; ?>
+                    <a href='login.php' class="auth-btn">Войти для изменения данных</a>
             </form>
         <?php endif; ?>
     </div>

@@ -5,16 +5,6 @@ header("X-Content-Type-Options: nosniff");
 header("X-XSS-Protection: 1; mode=block");
 header("Referrer-Policy: no-referrer-when-downgrade");
 
-session_set_cookie_params([
-    'lifetime' => 86400,
-    'path' => '/',
-    'domain' => $_SERVER['HTTP_HOST'],
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Strict'
-]);
-session_start();
-
 $config = require '../config.php';
 $adminUser = $config['admin']['adminName'];
 $adminPass = $config['admin']['adminPass'];
@@ -30,7 +20,7 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
 
 require_once 'db.php';
 require_once 'tokens.php';
-
+generateCSRFToken();
 
 $db = getDBConnection();
 

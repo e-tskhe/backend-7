@@ -13,9 +13,11 @@ session_set_cookie_params([
     'httponly' => true,
     'samesite' => 'Strict'
 ]);
-
 session_start();
+
 require_once 'db.php';
+require_once 'tokens.php';
+generateCSRFToken();
 
 function generateLogin()
 {
